@@ -1,2 +1,2 @@
 # language-APPLEASMx64
-Support for APPLEASMx64 syntax highlighting in GitHub's Atom editor
+APPLEASMx64 is an assembly language derivitive for use with the APPLEDRCx64 virtual processor. Specifications for the language as well as an environment for the processor can be found [here](https://github.com/OrionNebula/Dynarec).
