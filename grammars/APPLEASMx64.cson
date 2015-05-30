@@ -1,0 +1,115 @@
+'scopeName': 'source.asm'
+'name': 'APPLEASMx64'
+'filetypes': [
+  'asm'
+  's'
+]
+'patterns': [
+  #instructions
+  {
+    'match': '\\b(?:MOV|ADD|SUB|MUL|DIV|ASR|LSL|LSR|IFD|DFI|RTR|RFR|BTR|BFR|HBTR|LBTR|HBFR|HLT|AND|ORR|XOR|RET|DMOV|DADD|DSUB|DMUL|DDIV|B|DLN)\\b'
+    'name': 'support.function.builtin'
+  }
+  #single line comment
+  {
+    'match': ';.*'
+    'name': 'puncuation.definition.comment'
+  }
+  #mode directive
+  {
+    'match': '#mode (?:defines|text|macro|data)|#data'
+    'name': 'keyword.other'
+  }
+  #numeric hex
+  {
+    'match': '#0x[-A-Fa-f0-9]+'
+    'name': 'constant.numeric.integer.hexadecimal'
+  }
+  #numeric literal
+  {
+    'match': '#[-\\d]+'
+    'name': 'constant.numeric.integer'
+  }
+  #labels
+  {
+    'match': '#?(?<!64):.*:'
+    'name': 'entity.name.tag'
+  }
+  #64 bit
+  {
+    'match': '64:'
+    'name': 'keyword.other'
+  }
+  #data variables
+  {
+    'match': '\\w+(?= \\w+$)'
+    'name': 'entity.name.type.class'
+  }
+  #register\variable names
+  {
+    'match': '[rR]\\d{1,2}|^[\\s\\w&]+ (?=<-|->)|\\w+\\.'
+    'name': 'variable'
+  }
+  #property names
+  {
+    'match': '\\.\\w+ (?=<-|->)'
+    'name': 'meta.property-value'
+  }
+  #pointer read
+  {
+    'match': '[\\w]+\\* (?=->)'
+    'name': 'constant.other'
+  }
+  #defines
+  {
+    'match': '^\\s*(?!RET)[\\w]+$'
+    'name': 'entity.name.type.class'
+  }
+  #types
+  {
+    'match': '\\b(?:int|long|float|double|byte|\\w+(?=\\[))\\b'
+    'name': 'entity.name.type.class'
+  }
+  #macro variables
+  {
+    'match': '@\\w+'
+    'name': 'variable.argument'
+  }
+  #macro invocation
+  {
+    'match': '\\w+(?=\\(.*\\))'
+    'name': 'entity.name.function'
+  }
+  #keywords
+  {
+    'match': 'goto|do|end'
+    'name': 'entity.name.function'
+  }
+  #operators
+  {
+    'match': '<-|->|<=|<|>|>=|!=|='
+    'name': 'keyword.operator'
+  }
+  #block comment
+  {
+        'begin': '/\\*\\*(?!/)'
+        'captures':
+          '0':
+            'name': 'punctuation.definition.comment.js'
+        'patterns': [
+          {
+            'include': '#docblock'
+          }
+        ]
+        'end': '\\*/'
+        'name': 'comment.block.documentation.js'
+      }
+      {
+        'begin': '/\\*'
+        'captures':
+          '0':
+            'name': 'punctuation.definition.comment.js'
+        'end': '\\*/'
+        'name': 'comment.block.js'
+      }
+]
