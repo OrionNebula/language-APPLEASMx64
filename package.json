@@ -6,13 +6,13 @@
     "atom": "*",
     "node": "*"
   },
-  "homepage": "https://github.com/OrionNebula/Dynarec",
+  "homepage": "https://github.com/OrionNebula/language-APPLEASMx64",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OrionNebula/Dynarec.git"
+    "url": "https://github.com/OrionNebula/language-APPLEASMx64.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OrionNebula/Dynarec/issues"
+    "url": "https://github.com/OrionNebula/language-APPLEASMx64/issues"
   }
 }
