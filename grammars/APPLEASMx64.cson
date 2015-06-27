@@ -7,7 +7,7 @@
 'patterns': [
   #instructions
   {
-    'match': '\\b(?:MOV|ADD|SUB|MUL|DIV|ASR|LSL|LSR|IFD|DFI|RTR|RFR|BTR|BFR|HBTR|LBTR|HBFR|HLT|AND|ORR|XOR|RET|DMOV|DADD|DSUB|DMUL|DDIV|B|DLN)\\b'
+    'match': '\\b(?:MOV|ADD|SUB|MUL|DIV|ASR|LSL|LSR|IFD|DFI|RTR|RFR|BTR|BFR|HBTR|LBTR|HBFR|HLT|AND|ORR|XOR|RET|DMOV|DADD|DSUB|DMUL|DDIV|B|DLN|SVC)\\b'
     'name': 'support.function.builtin'
   }
   #single line comment
@@ -62,7 +62,7 @@
   }
   #defines
   {
-    'match': '^\\s*(?!RET)[\\w]+$'
+    'match': '^\\s*(?!RET|HLT)[\\w]+$'
     'name': 'entity.name.type.class'
   }
   #types
